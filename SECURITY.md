@@ -1,81 +1,43 @@
 # Security Policy
 
-## Supported Versions
+## Project Status
 
-We actively support security updates for the latest stable version of Primer. Older versions may receive security updates on a best-effort basis.
-
-| Version | Supported          |
-| ------- | ------------------ |
-| Latest  | :white_check_mark: |
-| < Latest| :x:                |
+Primer is a research project released publicly "as-is" for research and educational purposes. It is not actively maintained, and there is no guarantee of ongoing updates, support, or security fixes. The maintainers may review reports or accept contributions occasionally, at their discretion.
 
 ## Reporting a Vulnerability
 
-We take security vulnerabilities seriously. If you discover a security vulnerability in Primer, please report it responsibly.
-
-### How to Report
-
-**Please do NOT report security vulnerabilities through public GitHub issues.**
-
-Instead, please report security vulnerabilities by emailing:
+If you believe you have found a security vulnerability in Primer, please report it privately by emailing:
 
 **security@wharton.upenn.edu**
 
-Please include:
+Helpful details to include:
+
 - A description of the vulnerability
 - Steps to reproduce the issue
-- Potential impact of the vulnerability
-- Any suggested fixes or mitigations (if you have them)
+- Potential impact
+- Any suggested fixes or mitigations
 
-### What to Expect
+Please note:
 
-- We will acknowledge receipt of your report within 48 hours
-- We will provide an initial assessment within 7 days
-- We will keep you informed of our progress
-- We will notify you when the vulnerability has been resolved
+- We do not commit to acknowledging, responding to, or resolving reports within any particular time frame, or at all.
+- We do not guarantee that a fix will be developed or released.
+- If you have a fix, you are welcome to submit it as a pull request after the issue has been reported privately. Pull requests may or may not be reviewed or merged.
+- We take no responsibility for how the product is used.
 
-### Disclosure Policy
+We ask that you act in good faith to avoid privacy violations, destruction of data, and interruption or degradation of services, and that you not access or modify data that does not belong to you.
 
-We follow a coordinated disclosure process:
+## Using Primer Safely
 
-1. **Initial Report**: You report the vulnerability privately
-2. **Investigation**: We investigate and verify the vulnerability
-3. **Fix Development**: We develop a fix
-4. **Testing**: We test the fix thoroughly
-5. **Release**: We release the fix in a security update
-6. **Public Disclosure**: After the fix is released, we may publicly acknowledge the vulnerability and credit the reporter (with permission)
+Because Primer is experimental and not actively maintained, anyone deploying it is responsible for evaluating and securing their own deployment. Recommended practices:
 
-We ask that you:
-- Allow us a reasonable amount of time to address the vulnerability before public disclosure
-- Act in good faith to avoid privacy violations, destruction of data, and interruption or degradation of our services
-- Not access or modify data that does not belong to you
+- **Keep dependencies updated:** Primer's dependencies may become outdated over time. Review and update them before deploying.
+- **Secure API keys:** Never commit API keys or sensitive credentials to version control, and never expose them in client-side code or logs.
+- **Use environment variables:** Store sensitive configuration in environment variables.
+- **Review external content:** Primer can load external experience configurations and assets. Review, validate, and sanitize them before use.
+- **Validate file uploads:** When using file upload features, validate file types and sizes appropriately for your use case.
+- **Use secure connections:** Use HTTPS and secure WebSocket connections (WSS) in production.
+- **Access control:** Implement appropriate access controls for your deployment.
 
-### Security Best Practices
+## Disclaimer
 
-When using Primer:
-
-- **Keep dependencies updated**: Regularly update your dependencies to receive security patches
-- **Secure API keys**: Never commit API keys or sensitive credentials to version control
-- **Use environment variables**: Store sensitive configuration in environment variables
-- **Review experience configurations**: When loading external experience configurations, review them for security concerns
-- **Network security**: Use HTTPS in production environments
-- **Access control**: Implement appropriate access controls for your deployment
-
-### Known Security Considerations
-
-- **API Key Management**: Primer requires API keys for various services. Ensure these are stored securely and never exposed in client-side code or logs.
-- **File Uploads**: When using file upload features, validate file types and sizes appropriately for your use case.
-- **WebSocket Connections**: Primer uses WebSocket connections for real-time features. Ensure your deployment uses secure WebSocket connections (WSS) in production.
-- **External Content**: Primer can load external experience configurations and assets. Validate and sanitize external content appropriately.
-
-### Security Updates
-
-Security updates will be released as patch versions (e.g., 0.41.52) and will be documented in release notes. We recommend subscribing to repository notifications to be informed of security updates.
-
-## Research Context
-
-As a research project, Primer is provided "as-is" for research and educational purposes. While we take security seriously, users should be aware that this is experimental software and should take appropriate precautions when deploying it.
-
-## Contact
-
-For security-related questions or concerns, please contact: **security@wharton.upenn.edu**
+Primer is provided without warranty of any kind, as described in the project's license. Use it at your own risk.
