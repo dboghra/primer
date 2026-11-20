@@ -2,6 +2,7 @@ services:
   - type: web
     name: primer
     runtime: node
+    plan: free  # Use Render's free instance type (no cost, no card required)
     autoDeploy: false  # Only deploy via "Deploy to Render" button, not on every push
     buildCommand: npm install && npm run build
     startCommand: npm start
